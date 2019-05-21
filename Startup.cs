@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using WebApi.Context;
+using WebApi.Data;
+using WebApi.Mapping;
 
 namespace WebApi
 {
@@ -29,8 +31,9 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddDbContext<WebApiContext>(t => t.UseSqlServer(Configuration.GetConnectionString("Default")));
-            services.AddAutoMapper();
+            services.AddDbContext<WebApiContext>(t => t.UseNpgsql(Configuration.GetConnectionString("Canaima")));
+            services.AddTransient<IBooksRepository, BookFakeRepository>();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +48,7 @@ namespace WebApi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            Mapper.Initialize(t => t.AddProfile<BookMappingProfile>());
             app.UseHttpsRedirection();
             app.UseMvc();
         }

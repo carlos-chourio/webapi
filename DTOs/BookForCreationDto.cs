@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace WebApi.DTOs {
-    public class BookForCreationDto : BookDtoBase, IIdentityDto {
-        public int Id { get;set; }
+    public class BookForCreationDto : BookDtoBase {
+        [Required]
+        public int AuthorId { get;set; }
     }
 }

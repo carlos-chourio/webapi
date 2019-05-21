@@ -7,14 +7,14 @@ using WebApi.DTOs;
 using WebApi.Entities;
 
 namespace WebApi.Filters {
-    public class BookMapperFilterAttribute : ResultFilterAttribute {
+    public class BooksMapperFilterAttribute : ResultFilterAttribute {
         public override async Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next) {
             var result = context.Result as ObjectResult;
             if (result?.Value!=null && result?.StatusCode>=200 &&
                 result?.StatusCode < 300) {
-                var bookEntity = result.Value as Book;
+                var bookEntity = result.Value as IEnumerable<Book>;
                 if (bookEntity!=null) { 
-                    result.Value = Mapper.Map<BookDtoBase>(bookEntity);
+                    result.Value = Mapper.Map<IEnumerable<BookDtoBase>>(bookEntity);
                     await next();
                     return;
                 }
