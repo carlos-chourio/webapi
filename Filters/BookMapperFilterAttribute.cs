@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +13,7 @@ namespace WebApi.Filters {
                 result?.StatusCode < 300) {
                 var bookEntity = result.Value as Book;
                 if (bookEntity!=null) { 
-                    result.Value = Mapper.Map<BookDtoBase>(bookEntity);
+                    result.Value = Mapper.Map<BookForGetDto>(bookEntity);
                     await next();
                     return;
                 }

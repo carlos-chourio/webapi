@@ -21,7 +21,7 @@ namespace WebApi.Context {
             modelBuilder.Entity<Book>().HasData(new Book() {
                 Id = 1,
                 Title = "Misterious Mr. Crazy",
-                Descrition = "The book represents a series of murders and homicides that have been made by some misterious Guy named Mr. Crazy" +
+                Description = "The book represents a series of murders and homicides that have been made by some misterious Guy named Mr. Crazy" +
                    "and calls the attention of two young investigators named Tommy and Tuppence who try to stop him",
                 AuthorId = 1
             });

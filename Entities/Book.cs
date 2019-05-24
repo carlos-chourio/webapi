@@ -10,7 +10,7 @@ namespace WebApi.Entities {
         public string Title { get;set; }
         [Required]
         [MaxLength(600)]
-        public string Descrition { get;set; }
+        public string Description { get;set; }
         [Required]
         public int AuthorId { get;set; }
         public Author Author { get;set; }

@@ -10,7 +10,7 @@ namespace WebApi.Data {
             {
                 Id = 1,
                 Title = "Misterious Mr. Brown",
-                Descrition = "The book represents a series of murders and homicides that have been made by some misterious Guy named mr. Brown " +
+                Description = "The book represents a series of murders and homicides that have been made by some misterious Guy named mr. Brown " +
                 "and calls the attention of two young investigators named Tommy and Tuppence who try to stop him",
                 AuthorId = 2
             });
@@ -24,7 +24,7 @@ namespace WebApi.Data {
                 new Book() {
                    Id = 1,
                    Title = "Misterious Mr. Brown",
-                   Descrition = "The book represents a series of murders and homicides that have been made by some misterious Guy named mr. Brown " +
+                   Description = "The book represents a series of murders and homicides that have been made by some misterious Guy named mr. Brown " +
                    "and calls the attention of two young investigators named Tommy and Tuppence who try to stop him",
                    AuthorId = author.Id,
                    Author = author

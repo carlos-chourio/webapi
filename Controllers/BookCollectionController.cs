@@ -8,7 +8,7 @@ using WebApi.Entities;
 using CcLibrary.AspNetCore.Common;
 using WebApi.Filters;
 
-namespace webapi.Controllers {
+namespace WebApi.Controllers {
     [ApiController]
     [Route("api/BooksCollection")]
     public class BookCollectionController : ControllerBase {

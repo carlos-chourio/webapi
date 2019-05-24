@@ -33,6 +33,7 @@ namespace WebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<WebApiContext>(t => t.UseNpgsql(Configuration.GetConnectionString("Canaima")));
             services.AddTransient<IBooksRepository, BookFakeRepository>();
+            services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddAutoMapper(typeof(Startup));
         }
 

@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CcLibrary.AspNetCore\**" />
+    <Content Remove="CcLibrary.AspNetCore\**" />
+    <EmbeddedResource Remove="CcLibrary.AspNetCore\**" />
+    <None Remove="CcLibrary.AspNetCore\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -14,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\quiniela\CcLibrary.AspNetCore\CcLibrary.AspNetCore.csproj" />
+    <ProjectReference Include="CcLibrary.AspNetCore\CcLibrary.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>

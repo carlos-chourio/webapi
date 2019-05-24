@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AutoMapper;
+using CcLibrary.AspNetCore.Common;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Data;
 using WebApi.DTOs;
@@ -13,19 +14,25 @@ namespace WebApi.Controllers {
     public class BooksController : ControllerBase {
         private readonly IBooksRepository booksRepository;
         private readonly IMapper mapper;
+        private readonly IAuthorRepository authorRepository;
 
-        public BooksController(IBooksRepository booksRepository, IMapper mapper) {
+        public BooksController(IBooksRepository booksRepository, IMapper mapper, IAuthorRepository authorRepository) {
             this.booksRepository = booksRepository;
             this.mapper = mapper;
+            this.authorRepository = authorRepository;
         }
 
         [HttpPost]
+        [BookMapperFilter]
         public async Task<IActionResult> CreateBook([FromBody]BookForCreationDto bookDto) {
             if (ModelState.IsValid) {
-                var bookEntity = mapper.Map<Book>(bookDto);
-                booksRepository.CreateBook(bookEntity);
-                if (await booksRepository.SaveChangesAsync()) {
-                    return CreatedAtRoute("GetBooks", new { bookEntity.Id });
+                if (authorRepository.AuthorExists()) {
+                    var bookEntity = mapper.Map<Book>(bookDto);
+                    booksRepository.CreateBook(bookEntity);
+                    if (await booksRepository.SaveChangesAsync()) {
+                        return CreatedAtRoute("GetBooks", new { bookEntity.Id }, bookEntity);
+                    }
+                    return BadRequest(new ErrorModel("The author of this book doesn't exist in our database"));
                 }
                 return new StatusCodeResult(500);
             }

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi", "webapi.csproj", "{DED02B15-B8EA-4151-A5E0-E02D8192E848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi.csproj", "{DED02B15-B8EA-4151-A5E0-E02D8192E848}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CcLibrary.AspNetCore", "CcLibrary.AspNetCore\CcLibrary.AspNetCore.csproj", "{57E9EEC4-C88B-443D-B5F8-E184F832DE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CcLibrary.AspNetCore", "CcLibrary.AspNetCore\CcLibrary.AspNetCore.csproj", "{EA5346FE-0BFC-4168-BB72-7FB4321A9097}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{DED02B15-B8EA-4151-A5E0-E02D8192E848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DED02B15-B8EA-4151-A5E0-E02D8192E848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DED02B15-B8EA-4151-A5E0-E02D8192E848}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57E9EEC4-C88B-443D-B5F8-E184F832DE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57E9EEC4-C88B-443D-B5F8-E184F832DE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57E9EEC4-C88B-443D-B5F8-E184F832DE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57E9EEC4-C88B-443D-B5F8-E184F832DE87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5346FE-0BFC-4168-BB72-7FB4321A9097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5346FE-0BFC-4168-BB72-7FB4321A9097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5346FE-0BFC-4168-BB72-7FB4321A9097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5346FE-0BFC-4168-BB72-7FB4321A9097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
