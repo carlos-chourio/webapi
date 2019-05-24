@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\quiniela\CcLibrary\CcLibrary.csproj" />
+    <ProjectReference Include="..\quiniela\CcLibrary.AspNetCore\CcLibrary.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>

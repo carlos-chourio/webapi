@@ -1,13 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Data;
 using WebApi.DTOs;
 using WebApi.Entities;
-using CcLibrary.Common;
+using CcLibrary.AspNetCore.Common;
 using WebApi.Filters;
 
 namespace webapi.Controllers {
@@ -39,7 +37,7 @@ namespace webapi.Controllers {
 
         [HttpGet("{ids}")]
         [BooksMapperFilter]
-        public async Task<IActionResult> GetBooksCollection([ModelBinder(BinderType = typeof(ArrayModelBinder))] int[] ids) {
+        public async Task<IActionResult> GetBooksCollection([ModelBinder(BinderType = typeof(ArrayModelBinder<int>))] int[] ids) {
             var books = await booksRepository.GetBooksAsync(ids);
             if (books!=null) {
                 return Ok(books);

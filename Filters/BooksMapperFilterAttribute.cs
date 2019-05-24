@@ -12,9 +12,9 @@ namespace WebApi.Filters {
             var result = context.Result as ObjectResult;
             if (result?.Value!=null && result?.StatusCode>=200 &&
                 result?.StatusCode < 300) {
-                var bookEntity = result.Value as IEnumerable<Book>;
-                if (bookEntity!=null) { 
-                    result.Value = Mapper.Map<IEnumerable<BookDtoBase>>(bookEntity);
+                var bookEntities = result.Value as IEnumerable<Book>;
+                if (bookEntities!=null) { 
+                    result.Value = Mapper.Map<IEnumerable<BookDtoBase>>(bookEntities);
                     await next();
                     return;
                 }

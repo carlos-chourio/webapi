@@ -1,0 +1,3 @@
+[submodule "CcLibrary.AspNetCore"]
+	path = CcLibrary.AspNetCore
+	url = https://github.com/carlos-chourio/CcLibrary.AspNetCore.git
