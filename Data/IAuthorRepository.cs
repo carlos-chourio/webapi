@@ -1,5 +1,7 @@
-﻿namespace WebApi.Data {
+﻿using System.Threading.Tasks;
+
+namespace WebApi.Data {
     public interface IAuthorRepository {
-        bool AuthorExists();
+        Task<bool> AuthorExistsAsync();
     }
 }

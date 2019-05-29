@@ -6,10 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using WebApi.Context;
 
 namespace WebApi {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
+    public class Program {
+        public static void Main(string[] args) {
             var host = CreateWebHostBuilder(args).Build();
             try {
                 using (var scope = host.Services.CreateScope()) {

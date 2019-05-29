@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebApi.Entities;
+using WebApi.Entities.External;
 
 namespace WebApi.Data {
-    public class BookFakeRepository : IBooksRepository {
+    public class BookFakeRepository : IBookRepository {
         public async Task<Book> GetBookAsync(int id) {
             return await Task.FromResult(new Book()
             {
@@ -44,6 +45,18 @@ namespace WebApi.Data {
 
         public async Task<IEnumerable<Book>> GetBooksAsync(int[] ids) {
             return await GetBooksAsync();
+        }
+
+        public Task<BookCover> GetBookCoverAsync(int coverId) {
+            throw new NotImplementedException();
+        }
+
+        public Task<BookCover> GetBookCoverAsync(string coverId) {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<BookCover>> GetBookCoversAsync(string coverId) {
+            throw new NotImplementedException();
         }
     }
 }

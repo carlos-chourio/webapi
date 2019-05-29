@@ -13,9 +13,9 @@ namespace WebApi.Controllers {
     [Route("api/BooksCollection")]
     public class BookCollectionController : ControllerBase {
         private readonly IMapper mapper;
-        private readonly IBooksRepository booksRepository;
+        private readonly IBookRepository booksRepository;
 
-        public BookCollectionController(IMapper mapper, IBooksRepository booksRepository) {
+        public BookCollectionController(IMapper mapper, IBookRepository booksRepository) {
             this.mapper = mapper;
             this.booksRepository = booksRepository;
         }

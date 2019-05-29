@@ -6,6 +6,8 @@ namespace WebApi.Context {
     public class WebApiContext : DbContext {
         public DbSet<Book> Book { get; set; }
 
+        public DbSet<Author> Author { get; set; }
+
         public WebApiContext(DbContextOptions<WebApiContext> options) : base(options) {
         }
 
